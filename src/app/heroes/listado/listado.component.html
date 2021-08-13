@@ -1,0 +1,17 @@
+<p>Listado de héroes</p>
+<div *ngIf="heroeBorrado != ''; else noBorrado"><!-- O puedo colocar también solo heroeBorrado y Angular lo entiende -->
+    <h3>Héroe borrado: <small>{{heroeBorrado}}</small></h3>
+</div>
+
+<!-- O puedo colocar también heroeBorrado == '' -->
+<ng-template #noBorrado><!--noBorrado es una ref. local. La ref. local no es algo que exista en el componente de Typescritp. Usualm. van en el html -->
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+
+<button (click)="borrarHeroe()">Borrar</button>
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{i}} - {{heroe}}
+    </li>
+</ul>
