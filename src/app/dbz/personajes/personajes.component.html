@@ -1,0 +1,8 @@
+<h3>Personajes</h3>
+<hr>
+<ul>
+    <li *ngFor="let heroe of personajes">
+        {{heroe.nombre}} - {{heroe.poder | number}} <!-- El símbolo | es un pipe y permite que escriba en formato de número -->
+        <!-- Los pipes permiten transformar visualmente la información -->
+    </li>
+</ul>
