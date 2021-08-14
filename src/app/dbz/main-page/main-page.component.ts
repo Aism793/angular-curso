@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 
 
@@ -9,26 +10,23 @@ import { Personaje } from '../interfaces/dbz.interface';
 })
 export class MainPageComponent {
 
-  personajes: Personaje[] = [
-    {
-      nombre: 'Gogú',
-      poder: 15000
-    },
-    {
-      nombre: 'Vegueta',
-      poder: 7500
-    }
-  ];
 
   nuevo: Personaje = {
     nombre: 'Maestro Roshi',
     poder: 1000
   }
 
-  agregarNuevoPersonaje(argumento: Personaje){
-    //console.log(argumento);
-    this.personajes.push(argumento);
+
+
+  //Esta forma de definir una propiedad de la clase y asignarle el valor se conoce como inyección de dependencias
+  //Una forma corta de definir propiedades en TS
+  constructor(){
   }
+
+
+
+
+
 
   /* cambiarNombre(event: any) {
     console.log(event.target.value);
